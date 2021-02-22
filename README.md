@@ -1,12 +1,13 @@
+# Installing Tensorflow on x64 Lubuntu
 
 https://www.tensorflow.org/install/gpu
 
-# Download the GeForce GTX Nvidia Driver
+## Download the GeForce GTX Nvidia Driver
 
 https://www.nvidia.com/download/driverResults.aspx/104284/en-us
 
 
-# Disable toe Nouveau Kernal Driver
+## Disable toe Nouveau Kernal Driver
 
 ERROR: The Nouveau kernel driver is currently in use by your system.  This driver is incompatible with the NVIDIA         
          driver, and must be disabled before proceeding.  Please consult the NVIDIA driver README and your Linux            
