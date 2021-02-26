@@ -431,3 +431,14 @@ Of course, that 4 to 5 times performance could mean the difference between a sup
 As far as cloud resources go, there is also an exponential cost differential in terms of gaining what seems like a small multiplicative advantage in terms of performance vs. time gained. For example, the AWS EC2 V100 x4 costs about $4 per hour to train, vs. the AWS EC2 V100 x1, costing about $1 per hour to train.  However using 4 V100's to gain a 2x time differential, meaning training something in an hour vs. two hours, might be worth that $4.00 vs. paying $2.00, depending upon your project.
 
 [Source on Cost per Hour Time differential](https://towardsdatascience.com/maximize-your-gpu-dollars-a9133f4e546a)
+
+## Post Script - Keeping Container Running for Jupyter
+
+There is a way to be able to pull down a previously created notebook into a Docker container via the methods described in this tutorial:
+
+https://u.group/thinking/how-to-put-jupyter-notebooks-in-a-dockerfile/
+
+Basically use the -d flag.
+
+
+https://linuxize.com/post/docker-run-command/
