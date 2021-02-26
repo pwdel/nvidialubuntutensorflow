@@ -414,4 +414,16 @@ As we can see above, the default is currently at the date of authoring, a Tesla 
 
 This article lists out different benchmarks [comparing the Tesla T4 to the GTX 1700](https://askgeek.io/en/gpus/vs/NVIDIA_Tesla-T4-vs-NVIDIA_GeForce-GTX-1070-Desktop).
 
-Which shows that the T4 is faster by one metric, but the GTX1700 is fater by most metrics.
+Which shows that the T4 is faster by one metric, but the GTX1700 is faster by most metrics.
+
+#### Future Prospects
+
+One of the disadvantages of owning your own hardware is while it may afford certain advantages, the hardware can quickly go out of date, on the order of 2, 3 or 4 years.
+
+[This article](https://timdettmers.com/wp-content/uploads/2020/09/Normalized-GPU-Performance-Ampere-1.svg) goes through a list of benchmarks showing how the speed of the GTX1070 compares to many other existing GPUs as of late 2020. The, "normalized" performance as of early 2021 is the RTX 2080 Ti, which is about 2 to 3 times faster than the GTX1070.
+
+Looking online, the cost of the RTX2000 is about 4 to 5 times that of the GTX1070. So right now, the GTX1070 might just happen to be at a great price and performance point, but soon enough, it will become outdated in comparison to free resources online.
+
+Going into the higher spectrum of performance, you appear to be able to gain a 4 to 5 times performance of the GTX1070 for about 35 times less cost.
+
+Of course, that 4 to 5 times performance could mean the difference between a super large training set taking for example 5 days or a month, which might be worth the massive price differential. Who wants to spend a month training a model which might not even work?
