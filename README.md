@@ -427,3 +427,7 @@ Looking online, the cost of the RTX2000 is about 4 to 5 times that of the GTX107
 Going into the higher spectrum of performance, you appear to be able to gain a 4 to 5 times performance of the GTX1070 for about 35 times less cost.
 
 Of course, that 4 to 5 times performance could mean the difference between a super large training set taking for example 5 days or a month, which might be worth the massive price differential. Who wants to spend a month training a model which might not even work?
+
+As far as cloud resources go, there is also an exponential cost differential in terms of gaining what seems like a small multiplicative advantage in terms of performance vs. time gained. For example, the AWS EC2 V100 x4 costs about $4 per hour to train, vs. the AWS EC2 V100 x1, costing about $1 per hour to train.  However using 4 V100's to gain a 2x time differential, meaning training something in an hour vs. two hours, might be worth that $4.00 vs. paying $2.00, depending upon your project.
+
+[Source on Cost per Hour Time differential](https://towardsdatascience.com/maximize-your-gpu-dollars-a9133f4e546a)
