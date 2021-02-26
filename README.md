@@ -349,12 +349,69 @@ At this time, the system memory was running at about 4GB.  Running through the n
 
 So in conclusion, we were able to successfully set up TensorFlow using GPUs on a local machine with a GPU, through docker, and run a basic example.
 
-While the CPU version output errors, the GPU version worked seamlessly and all of the commands shown worked more or less instantanously.
+While the CPU version output errors, the GPU version worked seamlessly and all of the commands shown worked more or less instantaneously.
 
 At the end of this exercise, system memory was cached at about 11GB, with 6GB in use out of a total 16GB. So, this shows that having more memory will indeed be helpful for this application, particularly as applications get more advanced and we run more over time.
 
-The usage of Tensorflow in combination with a Jupyter notebook on a local machine is highly useful for speed. There may not be a huge advantage over using for example a Google CoLab notebook, but the ability to run a simple Dockerized Tensorflow model on a local machine before deploying to the cloud may have some benefits from the standpoint of being able to quickly iterate and train locally before deploying remotely, much like in web and webapp development.
+### Comparison to Free Online Tools
 
-This may come into particular consideration if integrating some kind of machine learning microservice along with a web app in a multi-container dockerized format of some kind.
+Since I already **have** this equipment, it's essentially something that I can use at will. Other products and services that I may choose to use at will which might be free might be superior, so it would be less logical for me to use my own resource if that were the case.
 
-Of course the limitations of this system include the fact that the Jupyter notebook doesn't automatically save as a CoLab notebook does, unless we set it up that way, we are only limited to the number of GPUs that we have on our system, whereas with Cloud we could access as many GPUs as we may need to quickly train a model.
+The usage of Tensorflow in combination with a Jupyter notebook on a local machine is highly useful for speed. There may not be a huge advantage over using for example a Google CoLab notebook, but the ability to run a simple Dockerized Tensorflow model on a local machine before deploying to the cloud may have some benefits from the standpoint of being able to quickly iterate and train locally before deploying remotely, much like in web and webapp development. CoLab kind of ties in almost unavoidably with Google Drive, which means you have to troubleshoot all sorts of ways of working with the Google Drive API to get access to data. Contrast this with just using our own Docker container, where we are essentially using normal containerized deployment methods, and not needing to re-do the code to work directly with a linux/container environment rather than a Google Drive environment.
+
+#### Qualitative Comparison to CoLab
+
+Iterative design speed may come into particular consideration if integrating some kind of machine learning microservice along with a web app in a multi-container dockerized format of some kind.
+
+Of course the limitations of this system include:
+
+* The fact that the Jupyter notebook doesn't automatically save as a CoLab notebook does, unless we set it up that way.
+* We are only limited to the number of GPUs that we have on our system, whereas with Cloud we could access as many GPUs as we may need to quickly train a model.
+
+#### Speed Comparison
+
+##### Kaggle Kernals
+
+[This article](https://medium.com/@saj1919/is-free-kaggle-k80-gpu-is-better-than-gtx-1070-maxq-8f9cecc4dc1b) does a nice detailed comparison of various NVIDIA families of hardware, including the Tesla family of products and including the GeForce GTX 1070.
+
+Using Keras examples, the author compared a Kaggle K80 GPU to the GeForce GTX 1700 and found that the GTX17000 had an almost 2 to 3 times speedup.
+
+##### Google CoLab
+
+Google CoLab is also said to use the same Tesla K80 GPU as the Kaggle K80.
+
+That being said, these cloud services are always going to have updates, so it's going to be important to know how to double check them.
+
+For Google Colab, you can go under, "Runtime" and then click, "Change Runtime type" and select GPU.
+
+We can then enter in the command: `!nvidia-smi` to look at which GPU is being used.
+
+```
+Fri Feb 26 13:12:44 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.39       Driver Version: 460.32.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla T4            Off  | 00000000:00:04.0 Off |                    0 |
+| N/A   53C    P8     9W /  70W |      0MiB / 15109MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+
+```
+
+As we can see above, the default is currently at the date of authoring, a Tesla T4.
+
+This article lists out different benchmarks [comparing the Tesla T4 to the GTX 1700](https://askgeek.io/en/gpus/vs/NVIDIA_Tesla-T4-vs-NVIDIA_GeForce-GTX-1070-Desktop).
+
+Which shows that the T4 is faster by one metric, but the GTX1700 is fater by most metrics.
